@@ -3,7 +3,7 @@ package logic.demoqa.registration;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 
-public class TestInitRegistration {
+public class BaseTest {
 
     @BeforeAll
     public static void init(){

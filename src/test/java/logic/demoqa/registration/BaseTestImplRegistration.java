@@ -2,7 +2,7 @@ package logic.demoqa.registration;
 
 import org.junit.jupiter.api.Test;
 
-public class TestImplRegistration extends TestInitRegistration {
+public class BaseTestImplRegistration extends BaseTest {
 
     private final RegistrationPage registrationPage = new RegistrationPage();
 
@@ -57,5 +57,11 @@ public class TestImplRegistration extends TestInitRegistration {
         registrationPage.getCheckingComponent().checkEmailNegative("wrong@mail.com");
         registrationPage.getCheckingComponent().checkGenderNegative("Female");
         registrationPage.getCheckingComponent().checkStateAndCityNegative("Delhi Mumbai");
+        registrationPage.getCheckingComponent().checkNumberNegative("763463467487");
+        registrationPage.getCheckingComponent().checkDateNegative("12 December, April");
+        registrationPage.getCheckingComponent().checkSubjectNegative("Loets");
+        registrationPage.getCheckingComponent().checkHobbyNegative("Not Reading");
+        registrationPage.getCheckingComponent().checkPictureDataNegative("hre.jpg");
+        registrationPage.getCheckingComponent().checkAddressNegative("st Loevv");
     }
 }

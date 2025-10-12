@@ -1,6 +1,7 @@
 package logic.demoqa.form;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.component.CheckingComponent;
 import pages.component.FormComponent;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -13,6 +14,7 @@ public class FormFillingPage {
     private final SelenideElement permanentAddress = $("#permanentAddress");
     private final SelenideElement submit = $("#submit");
     private final FormComponent formComponent = new FormComponent();
+    private final CheckingComponent checkingComponent = new CheckingComponent();
 
 
     public FormFillingPage openPage() {
@@ -40,5 +42,9 @@ public class FormFillingPage {
 
     public FormComponent getFormComponent() {
         return formComponent;
+    }
+
+    public CheckingComponent getCheckingComponent() {
+        return checkingComponent;
     }
 }

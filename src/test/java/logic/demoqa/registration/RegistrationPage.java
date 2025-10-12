@@ -65,7 +65,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setSubject(String subject) {
-        this.subject.setValue("Maths").pressEnter();
+        this.subject.setValue(subject).pressEnter();
         return this;
     }
 
@@ -102,18 +102,6 @@ public class RegistrationPage {
     }
 
 
-    /* public RegistrationPage checkResultPositive(String key, String value) {
-        $(".table-responsive").$(byText(key)).parent()
-                .shouldHave(text(value));
 
-        return this;
-    }
-
-
-    public RegistrationPage checkResultNegative(String key, String unexpectedValue) {
-        $(".table-responsive").$(byText(key)).parent().shouldNotHave(text(unexpectedValue));
-
-        return this;
-    }*/
 
 }
