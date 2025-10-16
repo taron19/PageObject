@@ -38,14 +38,6 @@ public class FakerUtils {
     }
 
 
-    public String getState() {
-        return state;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
     public String getFirstName() {
         return firstName;
     }
