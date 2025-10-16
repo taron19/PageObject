@@ -59,7 +59,7 @@ public class BaseTestImplRegistration extends BaseTest {
 
         registrationPage.getCheckingComponent().checkFirstNameAndLastNameNegative("Wrong Name");
         registrationPage.getCheckingComponent().checkEmailNegative("wrong@mail.com");
-        registrationPage.getCheckingComponent().checkGenderNegative("Female");
+        registrationPage.getCheckingComponent().checkGenderNegative("Female1");
         registrationPage.getCheckingComponent().checkStateAndCityNegative("Delhi Mumbai");
         registrationPage.getCheckingComponent().checkNumberNegative("763463467487");
         registrationPage.getCheckingComponent().checkDateNegative("12 December, April");

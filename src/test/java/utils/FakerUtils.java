@@ -10,19 +10,41 @@ public class FakerUtils {
     private Random random = new Random();
     private String firstName = faker.name().firstName();
     private String lastName = faker.name().lastName();
-    private String gender = generateGender();
+    private String gender = faker.options().option("Female", "Male", "Other");
     private String email = faker.internet().emailAddress();
     private String adress = faker.address().fullAddress();
-    private String phoneNumber = generatePhoneNumber();
-    private String year = generateYear();
-    private String month = generateMonth();
-    private String day = generateDay();
+    private String phoneNumber = faker.phoneNumber().subscriberNumber(10);
+    private String year =String.format("%s", faker.number().numberBetween(1920, 2024));
+    private String month = faker.options().option("January", "February", "March", "April",
+            "May", "June", "July", "August", "September", "October", "November", "December");
+    private String day =  String.format("%s", faker.number().numberBetween(10, 28));
     private String picture = "Снимок экрана 2025-02-21 130657.png";
     private String subject = generateSubject();
-    private String hobby = generateHobbies();
-    private String state = "Haryana";
-    private String city = "Panipat";
+    private String hobby = faker.options().option("Sports", "Reading", "Music");
+    private String state = faker.options().option("NCR", "Uttar Pradesh", "Rajasthan", "Haryana");
+    private String city = generateCity();
 
+
+    private String generateCity() {
+
+        if (state.equals("NCR")) {
+            return faker.options().option("Delhi", "Gurgagon", "Noida");
+        } else if (state.equals("Uttar Pradesh")) {
+            return faker.options().option("Agra", "Lucknow", "Merrut");
+        } else if (state.equals("Rajasthan")) {
+            return faker.options().option("Jaipur", "Jaiselmer");
+        }
+        return faker.options().option("Karnal", "Panipat");
+    }
+
+
+    public String getState() {
+        return state;
+    }
+
+    public String getCity() {
+        return city;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -44,60 +66,26 @@ public class FakerUtils {
         return picture;
     }
 
-    private String generatePhoneNumber() {
-
-        StringBuilder phoneNumber = new StringBuilder();
-
-        for (int i = 0; i < 10; i++) {
-            phoneNumber.append(random.nextInt(10));
-        }
-
-        return phoneNumber.toString();
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    private String generateGender() {
-        String[] genders = {"Male", "Female", "Other"};
-        return genders[random.nextInt(genders.length)];
-    }
 
     public String getGender() {
         return gender;
     }
 
-    private String generateYear() {
-        int year = 1950 + random.nextInt(74);
-        return String.valueOf(year);
-    }
 
     public String getYear() {
         return year;
     }
 
-    private String generateMonth() {
-        String[] months = {"January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"};
-        return months[random.nextInt(months.length)];
-    }
-
-
-    private String generateDay() {
-
-        return String.valueOf(1 + random.nextInt(28));
-    }
 
     private String generateSubject() {
         String[] genders = {"Chemistry", "Maths", "Biology"};
         return genders[random.nextInt(genders.length)];
     }
 
-    private String generateHobbies() {
-        String[] genders = {"Reading", "Sports", "Music"};
-        return genders[random.nextInt(genders.length)];
-    }
 
     public String selectState() {
         return state;
