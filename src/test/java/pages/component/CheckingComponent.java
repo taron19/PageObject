@@ -9,83 +9,103 @@ public class CheckingComponent {
     private final SelenideElement tableResponsive = $(".table-responsive");
 
 
-    public void checkFirstNameAndLastName(String firstNameAndLastName) {
+    public CheckingComponent checkFirstNameAndLastName(String firstNameAndLastName) {
         tableResponsive.shouldHave(text(firstNameAndLastName));
+        return this;
     }
 
-    public void checkEmail(String email) {
+    public CheckingComponent checkEmail(String email) {
         tableResponsive.shouldHave(text(email));
+        return this;
     }
 
-    public void checkGender(String gender) {
+    public CheckingComponent checkGender(String gender) {
         tableResponsive.shouldHave(text(gender));
+        return this;
     }
 
-    public void checkNumber(String number) {
+    public CheckingComponent checkNumber(String number) {
         tableResponsive.shouldHave(text(number));
+        return this;
     }
 
-    public void checkDate(String date) {
+    public CheckingComponent checkDate(String date) {
         tableResponsive.shouldHave(text(date));
+        return this;
     }
 
-    public void checkSubject(String subject) {
+    public CheckingComponent checkSubject(String subject) {
         tableResponsive.shouldHave(text(subject));
+        return this;
     }
 
-    public void checkHobby(String hobby) {
+    public CheckingComponent checkHobby(String hobby) {
         tableResponsive.shouldHave(text(hobby));
+        return this;
     }
 
-    public void checkPictureData(String pictureName) {
+    public CheckingComponent checkPictureData(String pictureName) {
         tableResponsive.shouldHave(text(pictureName));
+        return this;
     }
 
-    public void checkAddress(String address) {
+    public CheckingComponent checkAddress(String address) {
         tableResponsive.shouldHave(text(address));
+        return this;
     }
 
-    public void checkStateAndCity(String stateAndCity) {
+    public CheckingComponent checkStateAndCity(String stateAndCity) {
         tableResponsive.shouldHave(text(stateAndCity));
+        return this;
     }
 
-    public void checkFirstNameAndLastNameNegative(String unexpectedName) {
+    public CheckingComponent checkFirstNameAndLastNameNegative(String unexpectedName) {
         tableResponsive.shouldNotHave(text(unexpectedName));
+        return this;
     }
 
-    public void checkEmailNegative(String wrongEmail) {
+    public CheckingComponent checkEmailNegative(String wrongEmail) {
         tableResponsive.shouldNotHave(text(wrongEmail));
+        return this;
     }
 
-    public void checkGenderNegative(String wrongGender) {
+    public CheckingComponent checkGenderNegative(String wrongGender) {
         tableResponsive.shouldNotHave(text(wrongGender));
+        return this;
     }
 
-    public void checkNumberNegative(String wrongNumber) {
+    public CheckingComponent checkNumberNegative(String wrongNumber) {
         tableResponsive.shouldNotHave(text(wrongNumber));
+        return this;
     }
 
-    public void checkDateNegative(String wrongDate) {
+    public CheckingComponent checkDateNegative(String wrongDate) {
         tableResponsive.shouldNotHave(text(wrongDate));
+        return this;
     }
 
-    public void checkSubjectNegative(String wrongSubject) {
+    public CheckingComponent checkSubjectNegative(String wrongSubject) {
         tableResponsive.shouldNotHave(text(wrongSubject));
+        return this;
     }
 
-    public void checkHobbyNegative(String wrongHobby) {
+    public CheckingComponent checkHobbyNegative(String wrongHobby) {
         tableResponsive.shouldNotHave(text(wrongHobby));
+        return this;
     }
 
-    public void checkPictureDataNegative(String wrongPictureName) {
+    public CheckingComponent checkPictureDataNegative(String wrongPictureName) {
         tableResponsive.shouldNotHave(text(wrongPictureName));
+        return this;
     }
 
-    public void checkAddressNegative(String wrongAddress) {
+    public CheckingComponent checkAddressNegative(String wrongAddress) {
         tableResponsive.shouldNotHave(text(wrongAddress));
+        return this;
     }
 
-    public void checkStateAndCityNegative(String wrongStateAndCity) {
+    public CheckingComponent checkStateAndCityNegative(String wrongStateAndCity) {
         tableResponsive.shouldNotHave(text(wrongStateAndCity));
+        return this;
     }
 }
