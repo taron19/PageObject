@@ -29,6 +29,11 @@ public class CheckingComponent {
         return this;
     }
 
+    public CheckingComponent checkStateAndCity(String stateAndCity) {
+        tableResponsive.shouldHave(text(stateAndCity));
+        return this;
+    }
+
     public CheckingComponent checkDate(String date) {
         tableResponsive.shouldHave(text(date));
         return this;
@@ -54,10 +59,6 @@ public class CheckingComponent {
         return this;
     }
 
-    public CheckingComponent checkStateAndCity(String stateAndCity) {
-        tableResponsive.shouldHave(text(stateAndCity));
-        return this;
-    }
 
     public CheckingComponent checkFirstNameAndLastNameNegative(String unexpectedName) {
         tableResponsive.shouldNotHave(text(unexpectedName));

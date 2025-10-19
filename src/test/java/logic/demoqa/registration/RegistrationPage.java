@@ -97,6 +97,7 @@ public class RegistrationPage {
         return this;
     }
 
+
     public CheckingComponent getCheckingComponent() {
         return checkingComponent;
     }

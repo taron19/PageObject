@@ -19,22 +19,25 @@ public class FakerUtils {
             "May", "June", "July", "August", "September", "October", "November", "December");
     private String day =  String.format("%s", faker.number().numberBetween(10, 28));
     private String picture = "Снимок экрана 2025-02-21 130657.png";
-    private String subject = generateSubject();
+    private String subject = faker.options().option("Chemistry", "Maths", "Biology");
     private String hobby = faker.options().option("Sports", "Reading", "Music");
-    private String state = faker.options().option("NCR", "Uttar Pradesh", "Rajasthan", "Haryana");
-    private String city = generateCity();
+    private String state = getRandomState();
+    private String city = generateCity(state);
 
 
-    private String generateCity() {
+    private String generateCity(String state) {
+        return switch (state) {
 
-        if (state.equals("NCR")) {
-            return faker.options().option("Delhi", "Gurgagon", "Noida");
-        } else if (state.equals("Uttar Pradesh")) {
-            return faker.options().option("Agra", "Lucknow", "Merrut");
-        } else if (state.equals("Rajasthan")) {
-            return faker.options().option("Jaipur", "Jaiselmer");
-        }
-        return faker.options().option("Karnal", "Panipat");
+            case "NCR" -> faker.options().option("Delhi", "Gurgaon", "Noida");
+            case "Uttar Pradesh" -> faker.options().option("Agra", "Lucknow", "Merrut");
+            case "Haryana" -> faker.options().option("Karnal", "Panipat");
+            case "Rajasthan" -> faker.options().option("Jaipur", "Jaiselmer");
+            default -> null;
+        };
+    }
+
+    public  String getRandomState() {
+        return faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");
     }
 
 
@@ -72,11 +75,6 @@ public class FakerUtils {
         return year;
     }
 
-
-    private String generateSubject() {
-        String[] genders = {"Chemistry", "Maths", "Biology"};
-        return genders[random.nextInt(genders.length)];
-    }
 
 
     public String selectState() {
