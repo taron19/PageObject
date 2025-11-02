@@ -2,6 +2,9 @@ package logic.demoqa.registration;
 
 
 import org.junit.jupiter.api.Test;
+
+import static io.qameta.allure.Allure.step;
+
 import utils.FakerUtils;
 
 public class BaseTestImplRegistration extends BaseTest {
@@ -12,61 +15,71 @@ public class BaseTestImplRegistration extends BaseTest {
 
     @Test
     void successfulRegistration() {
-        registrationPage.openPage()
-                .setFirstName(fakerUtils.getFirstName())
-                .setLastName(fakerUtils.getLastName())
-                .setUserEmail(fakerUtils.getEmail())
-                .setGender(fakerUtils.getGender())
-                .setUserNumber(fakerUtils.getPhoneNumber())
-                .setDateOfBirthInput(fakerUtils.getYear(), fakerUtils.getMonth(), fakerUtils.getDay())
-                .setSubject(fakerUtils.getSubject())
-                .setHobbies(fakerUtils.getHobby())
-                .setPicture(fakerUtils.getPictureURL())
-                .setAddress(fakerUtils.getAdress())
-                .setState(fakerUtils.selectState())
-                .setCity(fakerUtils.selectCity());
 
 
-        registrationPage.getCheckingComponent()
-                .checkFirstNameAndLastName(fakerUtils.getFirstName() + " " + fakerUtils.getLastName())
-                .checkEmail(fakerUtils.getEmail())
-                .checkGender(fakerUtils.getGender())
-                .checkNumber(fakerUtils.getPhoneNumber())
-                .checkDate(fakerUtils.getDay() + " " + fakerUtils.getMonth() + "," + fakerUtils.getYear())
-                .checkSubject(fakerUtils.getSubject())
-                .checkHobby(fakerUtils.getSubject())
-                .checkPictureData(fakerUtils.getSubject())
-                .checkAddress(fakerUtils.getAdress())
-                .checkStateAndCity(fakerUtils.selectState() + " " + fakerUtils.selectCity());
+        step("Регистрация пользователя", () -> {
+            registrationPage.openPage()
+                    .setFirstName(fakerUtils.getFirstName())
+                    .setLastName(fakerUtils.getLastName())
+                    .setUserEmail(fakerUtils.getEmail())
+                    .setGender(fakerUtils.getGender())
+                    .setUserNumber(fakerUtils.getPhoneNumber())
+                    .setDateOfBirthInput(fakerUtils.getYear(), fakerUtils.getMonth(), fakerUtils.getDay())
+                    .setSubject(fakerUtils.getSubject())
+                    .setHobbies(fakerUtils.getHobby())
+                    .setPicture(fakerUtils.getPictureURL())
+                    .setAddress(fakerUtils.getAdress())
+                    .setState(fakerUtils.selectState())
+                    .setCity(fakerUtils.selectCity());
+        });
 
+
+        step("Проверка данных пользователя", () -> {
+            registrationPage.getCheckingComponent()
+                    .checkFirstNameAndLastName(fakerUtils.getFirstName() + " " + fakerUtils.getLastName())
+                    .checkEmail(fakerUtils.getEmail())
+                    .checkGender(fakerUtils.getGender())
+                    .checkNumber(fakerUtils.getPhoneNumber())
+                    .checkDate(fakerUtils.getDay() + " " + fakerUtils.getMonth() + "," + fakerUtils.getYear())
+                    .checkSubject(fakerUtils.getSubject())
+                    .checkHobby(fakerUtils.getSubject())
+                    .checkPictureData(fakerUtils.getSubject())
+                    .checkAddress(fakerUtils.getAdress())
+                    .checkStateAndCity(fakerUtils.selectState() + " " + fakerUtils.selectCity());
+
+        });
     }
 
     @Test
     void unsuccessfulRegistration_ShouldNotContainWrongData() {
-        registrationPage.openPage()
-                .setFirstName(fakerUtils.getFirstName())
-                .setLastName(fakerUtils.getLastName())
-                .setUserEmail(fakerUtils.getEmail())
-                .setGender(fakerUtils.getGender())
-                .setUserNumber(fakerUtils.getPhoneNumber())
-                .setDateOfBirthInput(fakerUtils.getYear(), fakerUtils.getMonth(), fakerUtils.getDay())
-                .setSubject(fakerUtils.getSubject())
-                .setHobbies(fakerUtils.getHobby())
-                .setPicture(fakerUtils.getPictureURL())
-                .setAddress(fakerUtils.getAdress())
-                .setState(fakerUtils.selectState())
-                .setCity(fakerUtils.selectCity());
+        step("Регистрация пользователя негативный", () -> {
+            registrationPage.openPage()
+                            .setFirstName(fakerUtils.getFirstName())
+                            .setLastName(fakerUtils.getLastName())
+                            .setUserEmail(fakerUtils.getEmail())
+                            .setGender(fakerUtils.getGender())
+                            .setUserNumber(fakerUtils.getPhoneNumber())
+                            .setDateOfBirthInput(fakerUtils.getYear(), fakerUtils.getMonth(), fakerUtils.getDay())
+                            .setSubject(fakerUtils.getSubject())
+                            .setHobbies(fakerUtils.getHobby())
+                            .setPicture(fakerUtils.getPictureURL())
+                            .setAddress(fakerUtils.getAdress())
+                            .setState(fakerUtils.selectState())
+                            .setCity(fakerUtils.selectCity());
+                });
 
 
-        registrationPage.getCheckingComponent().checkFirstNameAndLastNameNegative("Wrong Name")
-                .checkEmailNegative("wrong@mail.com")
-                .checkGenderNegative("Female1")
-                .checkStateAndCityNegative("Delhi Mumbai")
-                .checkNumberNegative("763463467487")
-                .checkDateNegative("12 December, April")
-                .checkSubjectNegative("Loets")
-                .checkHobbyNegative("Not Reading")
-                .checkPictureDataNegative("hre.jpg")
-                .checkAddressNegative("st Loevv");
+        step("Проверка данных пользователя негативный", () -> {
+            registrationPage.getCheckingComponent().checkFirstNameAndLastNameNegative("Wrong Name")
+                    .checkEmailNegative("wrong@mail.com")
+                    .checkGenderNegative("Female1")
+                    .checkStateAndCityNegative("Delhi Mumbai")
+                    .checkNumberNegative("763463467487")
+                    .checkDateNegative("12 December, April")
+                    .checkSubjectNegative("Loets")
+                    .checkHobbyNegative("Not Reading")
+                    .checkPictureDataNegative("hre.jpg")
+                    .checkAddressNegative("st Loevv");
+        });
     }
 }

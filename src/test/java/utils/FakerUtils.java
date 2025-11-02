@@ -7,7 +7,6 @@ import java.util.Random;
 
 public class FakerUtils {
     private Faker faker = new Faker(Locale.US);
-    private Random random = new Random();
     private String firstName = faker.name().firstName();
     private String lastName = faker.name().lastName();
     private String gender = faker.options().option("Female", "Male", "Other");
@@ -18,14 +17,14 @@ public class FakerUtils {
     private String month = faker.options().option("January", "February", "March", "April",
             "May", "June", "July", "August", "September", "October", "November", "December");
     private String day =  String.format("%s", faker.number().numberBetween(10, 28));
-    private String picture = "Снимок экрана 2025-02-21 130657.png";
+    private String picture = "screenshot.png";
     private String subject = faker.options().option("Chemistry", "Maths", "Biology");
     private String hobby = faker.options().option("Sports", "Reading", "Music");
     private String state = getRandomState();
     private String city = generateCity(state);
 
 
-    private String generateCity(String state) {
+    public String generateCity(String state) {
         return switch (state) {
 
             case "NCR" -> faker.options().option("Delhi", "Gurgaon", "Noida");

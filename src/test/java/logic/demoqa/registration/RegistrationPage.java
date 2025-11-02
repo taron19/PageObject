@@ -1,5 +1,6 @@
 package logic.demoqa.registration;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import pages.component.CalendarComponent;
 import pages.component.CheckingComponent;
@@ -28,6 +29,7 @@ public class RegistrationPage {
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
+        executeJavaScript("const iframe = document.querySelector('iframe[id^=google_ads_iframe]'); if(iframe) iframe.remove();");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
 
         return this;
@@ -49,7 +51,8 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setGender(String gender) {
-        this.genterWrapper.$(byText(gender)).click();
+        SelenideElement element = this.genterWrapper.$(byText(gender));
+        element.scrollIntoView(true).click();
         return this;
     }
 
@@ -86,7 +89,9 @@ public class RegistrationPage {
 
     public RegistrationPage setState(String state) {
         this.state.click();
-        $(byText(state)).click();
+        SelenideElement element = $(byText(state));
+        //элементы веб странцы могут не поместитсья в видимой части экрана поэтому мы скролим так чтобы она стала видна для компьютера
+        element.scrollIntoView(true).click();
         return this;
     }
 
