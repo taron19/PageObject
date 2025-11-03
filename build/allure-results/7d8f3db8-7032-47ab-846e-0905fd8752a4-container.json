@@ -1,0 +1,1 @@
+{"uuid":"7d8f3db8-7032-47ab-846e-0905fd8752a4","name":"BaseTestImplRegistration","children":["a895c9d2-9a87-42b4-bf57-4de37ea693f2"],"befores":[{"name":"init","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1762089219836,"stop":1762089219877}],"afters":[],"start":1762089219757,"stop":1762089243890}
