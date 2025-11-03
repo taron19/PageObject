@@ -15,7 +15,7 @@ public class BaseTestImplRegistration extends BaseTest {
 
 
     @Test
-    @Tag("success registration")
+    @Tag("success_registration")
     void successfulRegistration() {
 
 

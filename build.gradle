@@ -61,9 +61,12 @@ task helloJenkins {
         println '👋 Hello from Jenkins and Gradle!'
     }
 }
-
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 task firstTest(type: Test){
     useJUnitPlatform{
-        includeTags("success registration")
+        includeTags("success_registration")
     }
 }
