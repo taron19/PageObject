@@ -28,8 +28,10 @@ public class BaseTest {
         Configuration.pageLoadStrategy="eager";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.timeout=6000;
-        Configuration.remote = System.getProperty("remoteUrl");
-        Configuration.browser = System.getProperty("browser","chrome");
+       // Configuration.remote = System.getProperty("remoteUrl");
+       // Configuration.browser = System.getProperty("browser","chrome");
+        System.out.println(Configuration.remote = System.getProperty("remoteUrl"));
+        System.out.println(  Configuration.browser = System.getProperty("browser","chrome"));
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
@@ -37,6 +39,7 @@ public class BaseTest {
         ));
         Configuration.browserCapabilities = capabilities;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
 
     }
 
