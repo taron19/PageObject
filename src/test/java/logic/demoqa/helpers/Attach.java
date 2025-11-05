@@ -70,7 +70,7 @@ public class Attach {
      * URL формат: https://selenoid.autotests.cloud/video/{sessionId}.mp4
      */
     public static URL getVideoUrl() {
-        String videoUrl = "https://selenoid.autotests.cloud/video/" + sessionId() + ".mp4";
+        String videoUrl = System.getProperty("mp4Video") + sessionId() + ".mp4";
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {
