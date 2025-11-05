@@ -69,4 +69,6 @@ task firstTest(type: Test){
     useJUnitPlatform{
         includeTags("success_registration")
     }
+    systemProperties(System.getProperties())
 }
+
