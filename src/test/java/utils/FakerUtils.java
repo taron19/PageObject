@@ -3,7 +3,7 @@ package utils;
 import com.github.javafaker.Faker;
 
 import java.util.Locale;
-import java.util.Random;
+
 
 public class FakerUtils {
     private Faker faker = new Faker(Locale.US);
