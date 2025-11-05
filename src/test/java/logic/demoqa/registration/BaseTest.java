@@ -29,7 +29,7 @@ public class BaseTest {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.timeout=6000;
         Configuration.remote = System.getProperty("remoteUrl");
-        Configuration.browser = System.getProperty("browser");
+        Configuration.browser = System.getProperty("browser","chrome");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
