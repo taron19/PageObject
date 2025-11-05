@@ -30,8 +30,8 @@ public class BaseTest {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.timeout = 6000;
-        Configuration.remote = System.getProperty("remoteUrl");
-        Configuration.browser = System.getProperty("browserConfig");
+        Configuration.remote = System.getProperty("remoteUrl"," https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.browser = System.getProperty("browserConfig","chrome");
         System.out.println(Configuration.remote+"\n"+Configuration.browser);
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

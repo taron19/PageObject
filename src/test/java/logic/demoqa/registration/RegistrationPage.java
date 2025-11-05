@@ -29,7 +29,7 @@ public class RegistrationPage {
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");
-        executeJavaScript("const iframe = document.querySelector('iframe[id^=google_ads_iframe]'); if(iframe) iframe.remove();");
+        // executeJavaScript("const iframe = document.querySelector('iframe[id^=google_ads_iframe]'); if(iframe) iframe.remove();");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
 
         return this;
