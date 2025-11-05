@@ -6,6 +6,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import logic.demoqa.helpers.Attach;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
@@ -24,6 +25,7 @@ public class BaseTest {
      * Добавляем возможность видеть видеозапись теста (Можно показать заказчику как работает автотест, видео записи для отчетов)
      */
     @BeforeAll
+    @Tag("initMethod")
     public static void init() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
