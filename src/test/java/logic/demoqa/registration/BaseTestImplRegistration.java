@@ -1,13 +1,10 @@
 package logic.demoqa.registration;
 
 
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
 
-import org.junit.jupiter.api.parallel.Execution;
-import org.junit.jupiter.api.parallel.ExecutionMode;
 import utils.FakerUtils;
 
 
@@ -19,7 +16,6 @@ public class BaseTestImplRegistration extends BaseTest {
 
 
     @Test
-    @Tag("success_registration")
     void successfulRegistration() {
 
 
