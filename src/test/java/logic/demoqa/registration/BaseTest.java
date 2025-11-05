@@ -25,7 +25,6 @@ public class BaseTest {
      * Добавляем возможность видеть видеозапись теста (Можно показать заказчику как работает автотест, видео записи для отчетов)
      */
     @BeforeAll
-    @Tag("initMethod")
     public static void init() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
