@@ -11,7 +11,7 @@ import org.junit.jupiter.api.parallel.ExecutionMode;
 import utils.FakerUtils;
 
 
-//@Execution(ExecutionMode.SAME_THREAD)
+
 public class BaseTestImplRegistration extends BaseTest {
 
     private final RegistrationPage registrationPage = new RegistrationPage();

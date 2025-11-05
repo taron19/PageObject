@@ -21,17 +21,15 @@ public class BaseTest {
      * Вместо запуска Chrome на локальной машине, тесты посылают команды на Selenoid, а он уже запускает браузер в Docker-контейнере.
      * Легкая интеграция с CI/CD (Jenkins, GitLab CI),Экономия ресурсов локальной машины,Не нужно устанавливать браузеры и драйверы
      * Configuration.browserCapabilities = capabilities;
-     *  Добавляем возможность видеть видеозапись теста (Можно показать заказчику как работает автотест, видео записи для отчетов)
+     * Добавляем возможность видеть видеозапись теста (Можно показать заказчику как работает автотест, видео записи для отчетов)
      */
     @BeforeAll
-    public static void init(){
-        Configuration.pageLoadStrategy="eager";
+    public static void init() {
+        Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.timeout=6000;
-       // Configuration.remote = System.getProperty("remoteUrl");
-       // Configuration.browser = System.getProperty("browser","chrome");
-        System.out.println(Configuration.remote = System.getProperty("remoteUrl"," https://user1:1234@selenoid.autotests.cloud/wd/hub"));
-        System.out.println(  Configuration.browser = System.getProperty("browser","chrome"));
+        Configuration.timeout = 6000;
+        Configuration.remote = System.getProperty("remoteUrl", " https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.browser = System.getProperty("browser", "chrome");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
