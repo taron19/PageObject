@@ -41,7 +41,6 @@ public class BaseTest {
         Configuration.browserCapabilities = capabilities;
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        open("/");
     }
 
     @AfterEach
