@@ -69,11 +69,6 @@ task firstTest(type: Test){
 
     }
 
-task printProps {
-    doLast {
-        println "env: ${System.getProperty('env') ?: project.findProperty('env')}"
-        println "apiKey: ${project.findProperty('apiKey')}"
-    }
-}
+
 
 
