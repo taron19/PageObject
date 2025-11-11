@@ -29,9 +29,11 @@ public class BaseTest {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.timeout = 6000;
-        Configuration.remote = System.getProperty("remoteUrl"," https://user1:1234@selenoid.autotests.cloud/wd/hub");
-        Configuration.browser = System.getProperty("browserConfig","chrome");
-        System.out.println(Configuration.remote+"\n"+Configuration.browser);
+        Configuration.remote = System.getProperty("remote","https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.browser = System.getProperty("browserConfig", "chrome");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+        Configuration.browserVersion = System.getProperty("browserVersion", "127.0");
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
