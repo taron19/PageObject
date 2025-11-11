@@ -63,7 +63,7 @@ java {
 }
 task firstTest(type: Test){
     useJUnitPlatform{
-        includeTags("initMethod","success_registration")
+        includeTags("success_registration")
     }
     systemProperties(System.getProperties())
 }

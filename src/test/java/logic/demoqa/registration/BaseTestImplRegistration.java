@@ -1,6 +1,7 @@
 package logic.demoqa.registration;
 
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
@@ -15,6 +16,7 @@ public class BaseTestImplRegistration extends BaseTest {
     private final FakerUtils fakerUtils = new FakerUtils();
 
 
+    @Tag("success_registration")
     @Test
     void successfulRegistration() {
 
